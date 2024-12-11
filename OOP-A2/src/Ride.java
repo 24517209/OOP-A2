@@ -79,17 +79,22 @@ public class Ride implements RideInterface {
             System.out.println("Queue is empty. No visitor to remove.");
         }
     }
-
-    @Override
-    public void printQueue() {
-        if (visitorQueue.isEmpty()) {
-            System.out.println("The queue is empty.");
+    
+    private void printVisitorList(Queue<Visitor> visitorList, String listType) {
+        if (visitorList.isEmpty()) {
+            System.out.println(listType + " is empty.");
         } else {
-            System.out.println("Visitors in queue:");
-            for (Visitor visitor : visitorQueue) {
+            System.out.println(listType + ":");
+            for (Visitor visitor : visitorList) {
                 System.out.println("- " + visitor.getName());
             }
         }
+    }
+
+
+    @Override
+    public void printQueue() {
+        printVisitorList(visitorQueue, "Visitors in queue"); // 修改: 使用通用打印方法
     }
 
     @Override
@@ -112,16 +117,7 @@ public class Ride implements RideInterface {
 
     @Override
     public void printRideHistory() {
-        if (rideHistory.isEmpty()) {
-            System.out.println("Ride history is empty.");
-        } else {
-            System.out.println("Visitors in ride history:");
-            Iterator<Visitor> iterator = rideHistory.iterator();
-            while (iterator.hasNext()) {
-                Visitor visitor = iterator.next();
-                System.out.println("- " + visitor.getName());
-            }
-        }
+        printVisitorList(rideHistory, "Visitors in ride history"); // 修改: 使用通用打印方法
     }
 
     @Override
