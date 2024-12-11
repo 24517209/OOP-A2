@@ -25,58 +25,63 @@ private void addVisitorsToHistory(Ride ride, String[][] visitorsData) {
 }
 
 
-    public void partThree() {
-        Ride rollerCoaster = new Ride("Roller Coaster", "Open", null, 5);
+   public void partThree() {
+    Ride rollerCoaster = new Ride("Roller Coaster", "Open", null, 5);
 
-        // 添加 5 名游客到队列
-        rollerCoaster.addVisitorToQueue(new Visitor("Jack", 25, "Male", "T001", "10:00 AM"));
-        rollerCoaster.addVisitorToQueue(new Visitor("Sharon", 30, "Female", "T002", "10:10 AM"));
-        rollerCoaster.addVisitorToQueue(new Visitor("Benny", 20, "Male", "T003", "10:15 AM"));
-        rollerCoaster.addVisitorToQueue(new Visitor("Leo", 28, "Male", "T004", "10:20 AM"));
-        rollerCoaster.addVisitorToQueue(new Visitor("Nehemia", 26, "Female", "T005", "10:25 AM"));
+    String[][] visitorsData = {
+        {"Jack", "25", "Male", "T001", "10:00 AM"},
+        {"Sharon", "30", "Female", "T002", "10:10 AM"},
+        {"Benny", "20", "Male", "T003", "10:15 AM"},
+        {"Leo", "28", "Male", "T004", "10:20 AM"},
+        {"Nehemia", "26", "Female", "T005", "10:25 AM"}
+    };
+    addVisitorsToQueue(rollerCoaster, visitorsData);
 
-        System.out.println("Initial Queue:");
-        rollerCoaster.printQueue();
+    System.out.println("Initial Queue:");
+    rollerCoaster.printQueue();
 
-        // 移除一名游客
-        rollerCoaster.removeVisitorFromQueue();
+    rollerCoaster.removeVisitorFromQueue();
 
-        System.out.println("Updated Queue:");
-        rollerCoaster.printQueue();
-    }
+    System.out.println("Updated Queue:");
+    rollerCoaster.printQueue();
+}
 
     public void partFourA() {
-        Ride rollerCoaster = new Ride("Roller Coaster", "Open", null, 5);
+    Ride rollerCoaster = new Ride("Roller Coaster", "Open", null, 5);
 
-        // 添加 5 名游客到历史记录
-        rollerCoaster.addVisitorToHistory(new Visitor("Jack", 25, "Male", "T001", "10:00 AM"));
-        rollerCoaster.addVisitorToHistory(new Visitor("Sharon", 30, "Female", "T002", "10:10 AM"));
-        rollerCoaster.addVisitorToHistory(new Visitor("Benny", 20, "Male", "T003", "10:15 AM"));
-        rollerCoaster.addVisitorToHistory(new Visitor("Leo", 28, "Male", "T004", "10:20 AM"));
-        rollerCoaster.addVisitorToHistory(new Visitor("Nehemia", 26, "Female", "T005", "10:25 AM"));
+    String[][] visitorsData = {
+        {"Jack", "25", "Male", "T001", "10:00 AM"},
+        {"Sharon", "30", "Female", "T002", "10:10 AM"},
+        {"Benny", "20", "Male", "T003", "10:15 AM"},
+        {"Leo", "28", "Male", "T004", "10:20 AM"},
+        {"Nehemia", "26", "Female", "T005", "10:25 AM"}
+    };
+    addVisitorsToHistory(rollerCoaster, visitorsData);
 
-        System.out.println("Number of visitors in history: " + rollerCoaster.numberOfVisitors());
-        rollerCoaster.printRideHistory();
-    }
+    System.out.println("Number of visitors in history: " + rollerCoaster.numberOfVisitors());
+    rollerCoaster.printRideHistory();
+}
 
     public void partFourB() {
-        Ride rollerCoaster = new Ride("Roller Coaster", "Open", null, 5);
+    Ride rollerCoaster = new Ride("Roller Coaster", "Open", null, 5);
 
-        // 添加 5 名游客到历史记录
-        rollerCoaster.addVisitorToHistory(new Visitor("Tom", 32, "Male", "T006", "10:00 AM"));
-        rollerCoaster.addVisitorToHistory(new Visitor("Sherly", 24, "Female", "T007", "10:05 AM"));
-        rollerCoaster.addVisitorToHistory(new Visitor("Ben", 30, "Male", "T008", "10:10 AM"));
-        rollerCoaster.addVisitorToHistory(new Visitor("David", 28, "Male", "T009", "10:15 AM"));
-        rollerCoaster.addVisitorToHistory(new Visitor("Alice", 27, "Female", "T010", "10:20 AM"));
+    String[][] visitorsData = {
+        {"Tom", "32", "Male", "T006", "10:00 AM"},
+        {"Sherly", "24", "Female", "T007", "10:05 AM"},
+        {"Ben", "30", "Male", "T008", "10:10 AM"},
+        {"David", "28", "Male", "T009", "10:15 AM"},
+        {"Alice", "27", "Female", "T010", "10:20 AM"}
+    };
+    addVisitorsToHistory(rollerCoaster, visitorsData);
 
-        System.out.println("Unsorted Ride History:");
-        rollerCoaster.printRideHistory();
+    System.out.println("Unsorted Ride History:");
+    rollerCoaster.printRideHistory();
 
-        rollerCoaster.sortRideHistory(new VisitorComparator());
+    rollerCoaster.sortRideHistory(new VisitorComparator());
 
-        System.out.println("Sorted Ride History:");
-        rollerCoaster.printRideHistory();
-    }
+    System.out.println("Sorted Ride History:");
+    rollerCoaster.printRideHistory();
+}
 
     public void partFive() {
         Ride rollerCoaster = new Ride("Roller Coaster", "Open", new Employee("John", 35, "Male", "Operator", "EMP001"), 3);
