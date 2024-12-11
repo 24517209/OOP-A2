@@ -10,6 +10,20 @@ public class AssignmentTwo {
         assignment.partSix();
         assignment.partSeven();
     }
+    private void addVisitorsToQueue(Ride ride, String[][] visitorsData) {
+    for (String[] data : visitorsData) {
+        Visitor visitor = new Visitor(data[0], Integer.parseInt(data[1]), data[2], data[3], data[4]);
+        ride.addVisitorToQueue(visitor);
+    }
+}
+
+private void addVisitorsToHistory(Ride ride, String[][] visitorsData) {
+    for (String[] data : visitorsData) {
+        Visitor visitor = new Visitor(data[0], Integer.parseInt(data[1]), data[2], data[3], data[4]);
+        ride.addVisitorToHistory(visitor);
+    }
+}
+
 
     public void partThree() {
         Ride rollerCoaster = new Ride("Roller Coaster", "Open", null, 5);
