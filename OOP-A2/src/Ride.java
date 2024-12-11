@@ -79,7 +79,7 @@ public class Ride implements RideInterface {
             System.out.println("Queue is empty. No visitor to remove.");
         }
     }
-    
+
     private void printVisitorList(Queue<Visitor> visitorList, String listType) {
         if (visitorList.isEmpty()) {
             System.out.println(listType + " is empty.");
@@ -91,10 +91,9 @@ public class Ride implements RideInterface {
         }
     }
 
-
     @Override
     public void printQueue() {
-        printVisitorList(visitorQueue, "Visitors in queue"); 
+        printVisitorList(visitorQueue, "Visitors in queue");
     }
 
     @Override
@@ -117,7 +116,7 @@ public class Ride implements RideInterface {
 
     @Override
     public void printRideHistory() {
-        printVisitorList(rideHistory, "Visitors in ride history"); 
+        printVisitorList(rideHistory, "Visitors in ride history");
     }
 
     @Override
@@ -148,7 +147,6 @@ public class Ride implements RideInterface {
         System.out.println("Ride history sorted successfully.");
     }
 
-
     public void exportRideHistory(String fileName) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             for (Visitor visitor : rideHistory) {
@@ -157,10 +155,9 @@ public class Ride implements RideInterface {
             }
             System.out.println("Ride history exported to file: " + fileName);
         } catch (IOException e) {
-            System.err.println("Error exporting ride history to " + fileName + ": " + e.getMessage()); 
+            System.err.println("Error exporting ride history to " + fileName + ": " + e.getMessage());
         }
     }
-
 
     public void importRideHistory(String fileName) {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
@@ -171,7 +168,7 @@ public class Ride implements RideInterface {
             }
             System.out.println("Ride history imported from file: " + fileName);
         } catch (IOException e) {
-            System.err.println("Error importing ride history from " + fileName + ": " + e.getMessage()); 
+            System.err.println("Error importing ride history from " + fileName + ": " + e.getMessage());
         }
     }
 }
