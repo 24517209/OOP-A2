@@ -1,5 +1,5 @@
-Kevin Nielsen,26,Male,T021,12:35 PM,MODERATE
-Cole Petersen,28,Male,T022,12:40 PM,MILD
-Brandon Jorgensen,29,Male,T023,12:45 PM,MAX
-Tyler Madsen,30,Male,T024,12:50 PM,MODERATE
-Connor Hansen,27,Male,T025,12:55 PM,MILD
+{"name": "Kevin Nielsen", "age": 26, "gender": "Male", "ticketId": "T021", "visitTime": "12:35 PM", "preferredThrillLevel": "MODERATE"}
+{"name": "Cole Petersen", "age": 28, "gender": "Male", "ticketId": "T022", "visitTime": "12:40 PM", "preferredThrillLevel": "MILD"}
+{"name": "Brandon Jorgensen", "age": 29, "gender": "Male", "ticketId": "T023", "visitTime": "12:45 PM", "preferredThrillLevel": "MAX"}
+{"name": "Tyler Madsen", "age": 30, "gender": "Male", "ticketId": "T024", "visitTime": "12:50 PM", "preferredThrillLevel": "MODERATE"}
+{"name": "Connor Hansen", "age": 27, "gender": "Male", "ticketId": "T025", "visitTime": "12:55 PM", "preferredThrillLevel": "MILD"}
