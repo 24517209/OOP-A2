@@ -14,4 +14,10 @@ public interface RideInterface {
     void printRideHistory();
 
     void runOneCycle();
+
+    void sortRideHistory(VisitorComparator comparator);
+
+    void exportRideHistory(String fileName, boolean asJson);
+
+    void importRideHistory(String fileName, boolean fromJson);
 }
