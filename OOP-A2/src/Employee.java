@@ -41,21 +41,21 @@ public class Employee extends Person {
     public void performDuties() {
         switch (position.toLowerCase()) {
             case "thrill operator":
-                System.out.println("Ensures all rides are operated safely and efficiently.");
+                System.out.println("[INFO] Ensures all rides are operated safely and efficiently.");
                 break;
             case "safety officer":
-                System.out.println("Conducts safety checks and ensures compliance with park safety protocols.");
+                System.out.println("[INFO] Conducts safety checks and ensures compliance with park safety protocols.");
                 break;
             case "maintenance":
-                System.out.println("Maintains and repairs rides to ensure they function correctly.");
+                System.out.println("[INFO] Maintains and repairs rides to ensure they function correctly.");
                 break;
             default:
-                System.out.println("Performs general duties in the park.");
+                System.out.println("[INFO] Performs general duties in the park.");
         }
     }
 
     @Override
     public String toString() {
-        return super.toString() + ", Position: " + position + ", Employee ID: " + employeeId + ", Skill Level: " + skillLevel;
+        return super.toString() + String.format(" | Position: %-15s | Employee ID: %-10s | Skill Level: %-3d", position, employeeId, skillLevel);
     }
 }
