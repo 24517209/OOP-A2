@@ -38,6 +38,6 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Name: " + name + ", Age: " + age + ", Gender: " + gender;
+        return String.format("Name: %-20s | Age: %-3d | Gender: %-6s", name, age, gender);
     }
 }
