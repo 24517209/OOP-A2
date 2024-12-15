@@ -118,19 +118,19 @@ public class AssignmentTwo {
         };
         addVisitorsToHistory(ride, visitorsData);
 
-        ride.exportRideHistory("ride_history.csv", false); // 使用 CSV 格式导出
-        ride.exportRideHistory("ride_history.json", true); // 使用 JSON 格式导出
+        ride.exportRideHistory("ride_history.csv", false); 
+        ride.exportRideHistory("ride_history.json", true); 
         System.out.println("Ride history exported to files.");
     }
 
     public void partSeven() {
         Ride ride = new Ride("Action Zone", ThrillLevel.MILD, "Open", null, 5);
 
-        ride.importRideHistory("ride_history.csv", false); // 从 CSV 文件导入
+        ride.importRideHistory("ride_history.csv", false); 
         System.out.println("Number of visitors in history: " + ride.numberOfVisitors());
         ride.printRideHistory();
 
-        ride.importRideHistory("ride_history.json", true); // 从 JSON 文件导入
+        ride.importRideHistory("ride_history.json", true); 
         System.out.println("Number of visitors in history after importing JSON: " + ride.numberOfVisitors());
         ride.printRideHistory();
     }
