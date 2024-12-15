@@ -40,24 +40,20 @@ public class Visitor extends Person {
         this.preferredThrillLevel = preferredThrillLevel;
     }
 
-    
     public String toCsv() {
-        return getName() + "," + getAge() + "," + getGender() + "," + ticketId + "," + visitTime + "," + preferredThrillLevel;
+        return String.format("%-20s | %-3d | %-6s | %-10s | %-10s | %-10s", getName(), getAge(), getGender(), ticketId, visitTime, preferredThrillLevel);
     }
-
 
     public static Visitor fromCsv(String csv) {
         String[] parts = csv.split(",");
         return new Visitor(parts[0], Integer.parseInt(parts[1]), parts[2], parts[3], parts[4], parts[5]);
     }
 
-
     public String toJson() {
         return String.format("{\"name\": \"%s\", \"age\": %d, \"gender\": \"%s\", \"ticketId\": \"%s\", \"visitTime\": \"%s\", \"preferredThrillLevel\": \"%s\"}",
                 getName(), getAge(), getGender(), ticketId, visitTime, preferredThrillLevel);
     }
 
- 
     public static Visitor fromJson(String json) {
         try {
             String[] parts = json.replace("{", "").replace("}", "").replace("\"", "").split(", ");
@@ -88,6 +84,7 @@ public class Visitor extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + ", Ticket ID: " + ticketId + ", Visit Time: " + visitTime + ", Preferred Thrill Level: " + preferredThrillLevel;
+        return super.toString() + String.format(" | Ticket ID: %-10s | Visit Time: %-10s | Preferred Thrill Level: %-10s",
+                ticketId, visitTime, preferredThrillLevel);
     }
 }
